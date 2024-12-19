@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaning Business - Home</title>
+    <link rel="icon" href="favicon3.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="styles-home.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Lana's Spotless Sparkle</div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <!-- Hamburger Icon -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Your Spotless Home Starts Here</h1>
+        <p>Professional cleaning services tailored to your needs</p>
+        <a href="#contact" class="btn">Get a Free Estimate</a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="bottom-header">Invest in us, to save YOU time!</h2>
+        <h3 class="bottom-textbox-header"></h3>
+        <div class="services-container">
+            <div class="service-item-quote">
+                <h3>Inquire about your FREE quote! <a class="free-quote-link" href="#contact">Click Here</a></h3>
+                <p>No two homes are alike and we like to treat them as such,
+                    call or click today and receive a free personalized quote 
+                    for your home!
+                </p>
+            </div>
+            <div class="service-item-booking">
+                <h3>Schedule an appointment today!</h3>
+                <p>We understand that you live a busy schedule so we do our best to accomodate you
+                    with a schedule that works for you!
+                </p>
+            </div>
+            <div class="service-item-types">
+                <h3>We offer a variety of services to you!</h3>
+                <p>Choose from a number of our services offered to make your home feel like the day you
+                    moved in! <br><br><a class="services-link" href="services.html">See our list of services here!</a>
+                </p>
+            </div>
+        
+        </div>
+    </section>
+
+    <!-- Cancellation Policy Section -->
+    <section id="cancellation-policy" class="policy-section">
+        <h2>Cancellation Policy</h2>
+        <p>We understand that plans can change. To ensure fairness for both parties, we request a 24-hour notice for cancellations or rescheduling. If a cancellation is made within 24 hours of the scheduled appointment, a cancellation fee may apply.</p>
+    </section>
+
+    <!-- Service Agreement Section -->
+    <section id="service-agreement" class="agreement-section">
+        <h2>Service Agreement</h2>
+        <p>By booking our services, you agree to the terms and conditions outlined in our service agreement. Our team will arrive at the scheduled time and perform the cleaning services as agreed. Any changes to the scope of work will be discussed and agreed upon in advance.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Lana's Spotless Sparkle. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            console.log('Hamburger clicked!'); // Check if the click is registered
+            const navList = document.querySelector('header nav ul');
+            navList.classList.toggle('nav-active');
+        });
+    </script>
+</body>
+</html>

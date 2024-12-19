@@ -1,0 +1,192 @@
+/* Hero Section Styling */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust the height as needed */
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%); /* Slightly darken the image */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-overlay h1 {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    margin: 0;
+}
+
+
+/* Tabs Navigation */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.tab-btn {
+    background-color: #5a6c57;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.tab-btn:hover, .tab-btn.active {
+    background-color: #4b5847;
+    transform: scale(1.05);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+/* Service Grid - Flexbox Centering */
+.service-grid, .additional-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow the items to wrap onto new lines */
+    justify-content: center; /* Center the items horizontally */
+    gap: 1.5rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px; /* Optional: max width for the grid */
+    margin: 0 auto; /* Center the grid container itself */
+    transition: transform 0.3s ease;
+}
+
+/* Flex Items (Service Cards) */
+.service-card, .additional-item {
+    background: linear-gradient(to top right, #f9f9f9, #e0e0e0);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    overflow: hidden; /* Ensures no content overflows */
+    position: relative;
+    transition: all 0.3s ease;
+    flex: 1 0 280px; /* Allow items to grow/shrink but have a minimum width of 280px */
+}
+
+.service-card:hover, .additional-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    background-color: #eaeaea;
+}
+
+/* Add Icon Hover Effects */
+.service-card img {
+    width: 50px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover img {
+    transform: rotate(20deg);
+}
+
+/* Service Card Titles */
+h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #4b5847;
+    margin-bottom: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover h3 {
+    color: #2a2a2a;
+}
+
+/* Add Description Text for More Engaging Design */
+.service-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover p {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tabs {
+        flex-direction: column;
+    }
+    .tab-btn {
+        width: 100%;
+    }
+}
+
+/* Call-to-Action Section */
+#call-to-action {
+    text-align: center;
+    background: linear-gradient(to right, #5a6c57, #8fa680);
+    color: white;
+    padding: 2rem;
+    margin-top: 2rem;
+    margin-bottom: -2rem;
+    /* border-radius: 12px; */
+}
+
+#call-to-action h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#call-to-action p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    background: white;
+    color: #5a6c57;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    background-color: #eaeaea;
+}
+
+/* Icons */
+.service-card img {
+    width: 50px;
+    margin-bottom: 1rem;
+}
