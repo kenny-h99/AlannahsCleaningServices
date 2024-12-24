@@ -16,7 +16,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 10;
-    background-color: #85A98F;
+    background: linear-gradient(to right, #5a6c57, #8fa680);;
     color: #fff;
     padding: 1rem;
     display: flex;
