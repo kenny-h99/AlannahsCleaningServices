@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles-home.css">
     <link rel="stylesheet" href="styles-about.css">
     <link rel="stylesheet" href="styles-services.css">
+    <link rel="stylesheet" href="styles-contact.css">
+
 </head>
 <body>
     <!-- Header -->
@@ -27,3 +29,133 @@
             </div>
         </nav>
     </header>
+
+    <!-- FORM SECTION START -->
+    <h1>Contact Us</h1>
+    <form action="https://formsubmit.co/kenneth.h51533@gmail.com" method="POST">
+        <label for="name">Your Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Your Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="rooms">Number of Rooms to Clean:</label><br>
+        <input type="number" id="rooms" name="rooms" min="1" required><br><br>
+
+        <div id="roomsContainer"></div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const roomsInput = document.getElementById('rooms');
+        const roomsContainer = document.getElementById('roomsContainer');
+
+        roomsInput.addEventListener('input', () => {
+            const numRooms = parseInt(roomsInput.value) || 0;
+            roomsContainer.innerHTML = ''; // Clear previous rooms
+
+            for (let i = 1; i <= numRooms; i++) {
+                const roomDiv = document.createElement('div');
+                roomDiv.className = 'room-section';
+                roomDiv.innerHTML = `
+                    <h3>Room ${i}</h3>
+                    <label for="roomType${i}">Type of Room:</label>
+                    <select id="roomType${i}" name="roomType${i}" required>
+                        <option value="Bathroom">Bathroom</option>
+                        <option value="Bedroom">Bedroom</option>
+                        <option value="Kitchen">Kitchen</option>
+                        <option value="Living Room">Living Room</option>
+                        <option value="Laundry Room">Laundry Room</option>
+                    </select><br><br>
+
+                    <label for="roomSize${i}">Estimated Square Footage (if applicable):</label>
+                    <input type="number" id="roomSize${i}" name="roomSize${i}" min="0"><br><br>
+
+                    <label for="services${i}">Services:</label>
+                    <select id="services${i}" name="services${i}" multiple>
+                        <optgroup label="Standard Cleaning">
+                            <option value="Clean Tub/Shower">Clean Tub/Shower</option>
+                            <option value="Vacuum Floors">Vacuum Floors</option>
+                            <option value="Mop Floors">Mop Floors</option>
+                            <option value="Clean Countertops">Clean Countertops</option>
+                        </optgroup>
+                        <optgroup label="Deep Cleaning">
+                            <option value="Deep Clean Toilet">Deep Clean Toilet</option>
+                            <option value="Spot Clean Walls">Spot Clean Walls</option>
+                            <option value="Dust Vents">Dust Vents</option>
+                        </optgroup>
+                    </select><br><br>
+                `;
+                roomsContainer.appendChild(roomDiv);
+            }
+        });
+
+        document.getElementById('cleaningForm').addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent the form from refreshing the page
+            const formData = new FormData(e.target);
+
+            fetch('/submit-form', {
+                method: 'POST',
+                body: formData,
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Form submitted successfully!');
+                        e.target.reset();
+                        roomsContainer.innerHTML = '';
+                    } else {
+                        alert('There was an error submitting the form.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('There was an error submitting the form.');
+                });
+        });
+    </script>
+
+     <!-- FORM SECTION END -->
+
+
+
+     <!-- Call-to-Action Section -->
+     <section id="call-to-action">
+        <h2>Ready for a Spotless Space?</h2>
+        <p>Contact us today to book a service or learn more about how we can make your home shine!</p>
+        <a href="contact.html" class="cta-button">Book Now</a>
+    </section>
+</section>
+
+<!-- Call-to-Action Section -->
+<section id="call-to-action">
+    <div class="cta-content">
+        <!-- Navigation Links -->
+        <nav class="cta-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>|</li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li>|</li>
+                <li><a href="services.html">Service Areas</a></li>
+                <li>|</li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Contact Information -->
+        <div class="cta-contact">
+            <p>
+                <a href="contact.html"><span class="cta-icon">📞</span> (715) 558-8039</a>
+                <a href="contact.html"><span class="cta-icon">✉️</span> Lanaspotless.sparklellc@gmail.com</a>
+                <a href="contact.html"><span class="cta-icon">📍</span> Hayward, WI</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Lana's Spotless Sparkle. All rights reserved.</p>
+    </footer>
+</body>
+</html>
